@@ -17,8 +17,11 @@ reps = 1
 
 
 # ---------------------------- Helper Function -------------------------- #
-# pop up in front of all window screens
+
 def raise_above_all():
+    """
+    pop up in front of all window screens
+    """
     window.attributes('-topmost', 1)
     window.attributes('-topmost', 0)
 
@@ -36,6 +39,9 @@ def resource_path(relative_path):
 
 # ---------------------------- TIMER RESET ------------------------------- #
 def reset_timer():
+    """
+    Reset the timer
+    """
     global reps
     reps = 1
     window.after_cancel(timer)
@@ -45,6 +51,9 @@ def reset_timer():
 
 
 def start_timer():
+    """
+    Start the timer
+    """
     global reps
     if reps ^ 1 != reps+1:  # odds time
         # working time
@@ -63,6 +72,10 @@ def start_timer():
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def count_down(count):
+    """
+    It's a final count down.
+    Counting down time
+    """
     global timer
     minutes = count//60
     if minutes < 10:
@@ -94,7 +107,7 @@ header.grid(row=0, column=1)
 # tomato
 canvas = Canvas(width=208, height=224, bg=YELLOW, highlightthickness=0)
 # read img in tk
-path = resource_path("C:/StudyingandExaminations/Python/100Days project/Day28/Pomodoro/tomato.png")
+path = resource_path("C:/StudyingandExaminations/Python/100Days project/Day28/Pomodoro/img/tomato.png")
 print(path)
 img_tomato = PhotoImage(file=path)
 canvas.create_image(101, 112, image=img_tomato)
